@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookish</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="output.css">
+        <link rel="icon" href="/images/booklogo.png" type="image/png"/>
+    <style>
+    a{
+       text-decoration: none; 
+    }
+    .card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    }
+    .shopping{
+       z-index: 2000;
+    }
+    .btn-primary {
+       background-color: #8b5cf6;
+       border-color: #8b5cf6;
+       position: absolute;
+       bottom: 20px;
+    }
+    .btn-primary:hover{
+       background-color: rgb(236 72 153);
+       border-color: rgb(236 72 153);
+    }
+    #products {
+       padding-top: 80px; 
+    }
+    .shopping {
+       display: flex;
+       justify-content: flex-end;
+       align-items: center;
+       padding-right: 20px;
+    }
+    .shopping p {
+       margin-right: 10px;
+    }
+    nav{
+       z-index: 1000;
+    }
+    @media (min-width: 1024px) {
+      .search-container {
+          display: flex !important;
+      }
+    }
+    body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(to right, #eb89c4, #ad99d1);
+      }
+    </style>
+
+  </head>
+  <body class="bg-gray-100 ">
+    <header>
+      <!--NavBar-->
+      <section id="navbar">
+        <nav class="bg-gray-800 p-2 pb-0 fixed w-full">
+          <div class="container-fluid mx-auto flex justify-between items-center">
+            <div class="flex items-center"> <!-- New div to group logo and text -->
+              <img src="images/booklogo.png" class="d-inline-block align-top w-14 h-11" alt="Enchanted Fragrances">
+              <a href="#" class="text-white text-xl font-bold pb-2 ml-2">Bookish</a> <!-- Adjust ml-2 for spacing -->
+            </div>
+            <ul class="hidden md:flex pt-2 space-x-4 items-center">
+              <li>
+                <a href="/" class="text-gray-300 hover:text-white">HOME</a>
+              </li>
+              <li>
+                <a href="request" class="text-gray-300 hover:text-white" >REQUEST A BOOK</a >
+              </li>
+              <li>
+                <a href="login" class="text-gray-300 hover:text-white" >LOGIN/REGISTER</a >
+              </li>
+              <li>
+                <a href="contact" class="text-gray-300 hover:text-white">CONTACT US</a>
+              </li>
+            </ul>
+          </div>
+          <div id="mobile-menu" class="hidden md:hidden">
+            <ul class="bg-gray-800 pt-2 space-y-4 p-4">
+              <li>
+                <a href="/" class="text-gray-300 hover:text-white block">HOME</a>
+              </li>
+              <li>
+                <a href="request" class="text-gray-300 hover:text-white block">REQUEST A BOOK</a>
+              </li>
+              <li>
+                <a href="login" class="text-gray-300 hover:text-white block">LOGIN/REGISTER</a>
+              </li>
+              <li>
+                <a href="contact" class="text-gray-300 hover:text-white block">CONTACT US</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+      
+    </header>
+    <main>
+      <section id="products" class="py-8">
+        <div class="shopping">
+          <div class="search-container max-w-md pr-1 block">
+            <div class="relative flex h-10 rounded-lg focus-within:shadow-lg mr-4 bg-white overflow-hidden">
+              <div class="grid place-items-center h-full w-12 text-gray-300 border-none" >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+              </div>
+              <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" id="search-mobile" placeholder="Search something.."/>
+            </div>
+          </div>
+          <p class="pt-3">CART / $00.00</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(0, 0, 0);transform: msFilter;">
+              <path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z"></path>
+              <circle cx="10.5" cy="19.5" r="1.5"></circle>
+              <circle cx="17.5" cy="19.5" r="1.5"></circle>
+          </svg>
+      </div>      
+        <div class="container mx-auto mt-8">
+            <h3 class="text-2xl font-bold mb-6 text-white">Latest Releases :</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668935201i/50998056.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">The Ministry for the Future</h5>
+                        <p class="text-gray-600 text-sm">By: Kim Stanley Robinson</p>
+                        <p class="text-gray-800 font-semibold text-sm">$16.99</p>
+                        <a href="#" class=" btn btn-primary text-white px-2 py-1 rounded text-sm inline-block  mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://th.bing.com/th/id/R.afce25bed05b0b7042dc324a17424ffd?rik=d3GBdwpNChC%2fzA&pid=ImgRaw&r=0" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">Matrix</h5>
+                        <p class="text-gray-600 text-sm">By: Lauren Groff</p>
+                        <p class="text-gray-800 font-semibold text-sm">$14.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1574943819i/43890641.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">Hamnet</h5>
+                        <p class="text-gray-600 text-sm">By: Maggie O' Farrell</p>
+                        <p class="text-gray-800 font-semibold text-sm">$16.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://paulspicks.blog/wp-content/uploads/2020/02/81mny8q7oll.jpg?w=1400" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">The House in the Cerulean Sea</h5>
+                        <p class="text-gray-600 text-sm">By: T.J. Klune</p>
+                        <p class="text-gray-800 font-semibold text-sm">$13.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://th.bing.com/th/id/R.3deee37e784ed0de2ff213f91d002ea9?rik=yL4pYB2rLmnr4g&pid=ImgRaw&r=0" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">Trust</h5>
+                        <p class="text-gray-600 text-sm">By: Hernan Diaz</p>
+                        <p class="text-gray-800 font-semibold text-sm">$19.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://www.hachette.co.uk/wp-content/uploads/2023/11/hbg-title-9780349440415.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">The Paradise Problem</h5>
+                        <p class="text-gray-600 text-sm">By: Christina Lauren</p>
+                        <p class="text-gray-800 font-semibold text-sm">$14.39</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1716480921i/199798179.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">The Ministry of Time</h5>
+                        <p class="text-gray-600 text-sm">By: Kaliane Bradley </p>
+                        <p class="text-gray-800 font-semibold text-sm">$16.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1695093710i/195790730.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">One Last Shot</h5>
+                        <p class="text-gray-600 text-sm">By: Betty Cayouette</p>
+                        <p class="text-gray-800 font-semibold text-sm">$12.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1660145160i/61718053.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">Happy Place</h5>
+                        <p class="text-gray-600 text-sm">By: Emily Henry</p>
+                        <p class="text-gray-800 font-semibold text-sm">$11.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                    <div class="h-2/3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1687105546i/101144869.jpg" class="w-full h-full object-cover" alt="">
+                    </div>
+                    <div class="h-1/3 p-2">
+                        <h5 class="font-bold text-base">The Long Game</h5>
+                        <p class="text-gray-600 text-sm">Elena Armas</p>
+                        <p class="text-gray-800 font-semibold text-sm">$15.99</p>
+                        <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-8">
+          <h3 class="text-2xl font-bold mb-6 text-white">Most Popular :</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1688011813i/27362503.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">It Ends with Us</h5>
+                      <p class="text-gray-600 text-sm">By: Colleen Hoover</p>
+                      <p class="text-gray-800 font-semibold text-sm">$15.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1620324329i/50659467.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">A Court of Thorns and Roses</h5>
+                      <p class="text-gray-600 text-sm">By: Sarah J. Maas</p>
+                      <p class="text-gray-800 font-semibold text-sm">$18.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">Where the Crawdads Sing</h5>
+                      <p class="text-gray-600 text-sm">By: Delia Owens</p>
+                      <p class="text-gray-800 font-semibold text-sm">$16.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1584633432i/50623864.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">The Invisible Life of Addie LaRue</h5>
+                      <p class="text-gray-600 text-sm">By: V.E. Schwab</p>
+                      <p class="text-gray-800 font-semibold text-sm">$17.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1611937942i/56732449.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">The Love Hypothesis</h5>
+                      <p class="text-gray-600 text-sm">By: Ali Hazelwood</p>
+                      <p class="text-gray-800 font-semibold text-sm">$14.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1633097753i/40132775.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">House of Sky and Breath</h5>
+                      <p class="text-gray-600 text-sm">By: Sarah J. Maas</p>
+                      <p class="text-gray-800 font-semibold text-sm">$20.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://th.bing.com/th/id/R.00232c3df794a970789992fc820ddb59?rik=15GoPQ9vkjfI7Q&pid=ImgRaw&r=0" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">The Midnight Library</h5>
+                      <p class="text-gray-600 text-sm">By: Matt Haig</p>
+                      <p class="text-gray-800 font-semibold text-sm">$16.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images.wondershare.com/filmora/article-images/2022/booktok-blood-ash.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">From Blood and Ash</h5>
+                      <p class="text-gray-600 text-sm">By: Jennifer L. Armentrout</p>
+                      <p class="text-gray-800 font-semibold text-sm">$14.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1664458703i/32620332.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">The Seven Husbands of Evelyn Hugo</h5>
+                      <p class="text-gray-600 text-sm">By: Taylor Jenkins Reid</p>
+                      <p class="text-gray-800 font-semibold text-sm">$13.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+              <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                  <div class="h-2/3">
+                      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1559142847i/44778083.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="h-1/3 p-2">
+                      <h5 class="font-bold text-base">Crescent City</h5>
+                      <p class="text-gray-600 text-sm">By: Sarah J. Maas</p>
+                      <p class="text-gray-800 font-semibold text-sm">$18.99</p>
+                      <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="container mx-auto mt-8">
+        <h3 class="text-2xl font-bold mb-6 text-white">Discounts :</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                <div class="h-2/3">
+                    <img src="https://imgix.bustle.com/uploads/image/2018/12/26/fa3d106d-8f15-4108-9b1e-feef8b7da0f5-circe.jpg?w=400&h=604&fit=crop&crop=faces&auto=format%2Ccompress&q=50&dpr=2" class="w-full h-full object-cover" alt="">
+                </div>
+                <div class="h-1/3 p-2">
+                    <h5 class="font-bold text-base">Circe</h5>
+                    <p class="text-gray-600 text-sm">By: Madeline Miller</p>
+                    <p class="text-gray-800 font-semibold text-sm"><del>$14.99</del> $12.99</p>
+                    <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                <div class="h-2/3">
+                    <img src="https://cdn.kobo.com/book-images/f162530c-1e6b-4d7c-abfb-374cb8b983d5/1200/1200/False/the-song-of-achilles.jpg" class="w-full h-full object-cover" alt="">
+                </div>
+                <div class="h-1/3 p-2">
+                    <h5 class="font-bold text-base">The Song of Achilles</h5>
+                    <p class="text-gray-600 text-sm">By: Madeline Miller</p>
+                    <p class="text-gray-800 font-semibold text-sm"><del>$13.99</del> $11.99</p>
+                    <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                <div class="h-2/3">
+                    <img src="https://th.bing.com/th/id/R.018cde0390f58d61fc009d9e411d229a?rik=4CnTn%2fDLJDMyXw&pid=ImgRaw&r=0" class="w-full h-full object-cover" alt="">
+                </div>
+                <div class="h-1/3 p-2">
+                    <h5 class="font-bold text-base">The Silent Patient</h5>
+                    <p class="text-gray-600 text-sm">By: Alex Michaelides</p>
+                    <p class="text-gray-800 font-semibold text-sm"><del>$12.99</del> $9.99</p>
+                    <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                </div>
+            </div>
+            <div class="card bg-white shadow-lg rounded-lg overflow-hidden h-56">
+                <div class="h-2/3">
+                    <img src="https://th.bing.com/th/id/R.e76868904a78381e46fd237ad9bd7c21?rik=YkEQKS%2f%2fKDelIw&pid=ImgRaw&r=0" class="w-full h-full object-cover" alt="">
+                </div>
+                <div class="h-1/3 p-2">
+                    <h5 class="font-bold text-base">The Night Circus</h5>
+                    <p class="text-gray-600 text-sm">By: Erin Morgenstern</p>
+                    <p class="text-gray-800 font-semibold text-sm"><del>$15.99</del> $13.99</p>
+                    <a href="#" class="btn btn-primary bg-purple-500 text-white px-2 py-1 rounded text-sm inline-block mt-1">add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </section>
+    
+    
+    </main>
+    <footer class="bg-gray-800 p-2 mt-10 mb-0">
+      <div class="container mx-auto text-center text-gray-400">
+        <p>&copy; 2024 Bookish. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
